@@ -1,0 +1,5 @@
+\\psf\Home\Desktop\vsprojects\EasyDown\EasyDown\EasyDown.Entity\bin\Debug\EasyDown.Entity.dll
+\\psf\Home\Desktop\vsprojects\EasyDown\EasyDown\EasyDown.Entity\bin\Debug\EasyDown.Entity.pdb
+\\psf\Home\Desktop\vsprojects\EasyDown\EasyDown\EasyDown.Entity\obj\Debug\EasyDown.Entity.dll
+\\psf\Home\Desktop\vsprojects\EasyDown\EasyDown\EasyDown.Entity\obj\Debug\EasyDown.Entity.pdb
+\\psf\Home\Desktop\vsprojects\EasyDown\EasyDown\EasyDown.Entity\obj\Debug\EasyDown.Entity.csprojResolveAssemblyReference.cache
