@@ -1,0 +1,182 @@
+﻿body {
+    font-family: "Microsoft YaHei", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    line-height: 28px;
+    margin-bottom: 0px;
+    BACKGROUND: #e7e8eb url(/Content/Images/bg.jpg);
+    box-shadow: 0 0 15px #ccc;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+
+.clr {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.box-main {
+    font-size: 15px;
+    min-height: 600px;
+    background-color: #fff;
+    box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+    padding: 20px;
+    margin-top:10px;
+}
+
+#searchContent {
+    width: 300px;
+}
+
+.footer {
+    min-height: 80px;
+    _height: 80px;
+    *height: 80px;
+    margin-top: -10px;
+    *margin-top: auto;
+    _margin-top: auto;
+    padding-top: 20px;
+}
+
+#easydown-copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+
+.header {
+    height: 44px;
+    background: #FFF;
+    overflow: hidden;
+    box-shadow: 0 0px 7px rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0px;
+    z-index: 999;
+    top: 0px;
+    width: 100%;
+    text-align:center;
+}
+
+
+h2, h3 {
+   padding:0;
+   margin:0;
+}
+
+
+.nav_left {
+   float:left;
+   line-height:44px;
+}
+
+.nav_right {
+  float:right;
+  line-height:44px;
+}
+
+
+.div_inline {
+  float:left;
+  margin-right:20px;
+}
+
+.reply-left{
+	border: 1px solid #99CCCC;
+	background-color:#EEEEEE;
+	font-size: 15px;
+	width: 160px;
+	position: relative;
+}
+.reply-right{
+	padding: 20px 20px;
+}
+
+.reply-left .reply-user{
+    text-align:center;
+}
+.reply-left .reply-userphoto {
+    text-align:center;
+}
+
+
+.brand:hover{
+    text-decoration:none;
+}
+
+
+.text {
+   width:300px;
+}
+
+.resource_list_one {
+    padding:8px;
+}
+
+.resource_list_left {
+   float:left;
+}
+
+.resource_list_right {
+   float:left;
+   margin-left:20px;
+}

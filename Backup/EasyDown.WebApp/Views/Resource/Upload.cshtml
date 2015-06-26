@@ -1,0 +1,58 @@
+﻿@model EasyDown.WebApp.Models.ViewModel.ResourceUploadViewModel
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>资源上传</h2>
+<div class="box-main">
+    @using (Html.BeginForm(Html.BeginForm("DoUpload", "Resource", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResourceName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ResourceName, new { @style = "width:400px;" })
+            @Html.ValidationMessageFor(model => model.ResourceName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResourceType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ResourceType, ViewBag.TypeList as List<SelectListItem>, new { @style = "width:200px;" })
+            @Html.ValidationMessageFor(model => model.ResourceType)
+        </div>
+        <div style="margin-top:20px;">
+            请选择文件:
+            <input type="file" name="file" />
+        </div>
+
+        <div style="margin-top:20px;">
+            请选择截图:
+            <input type="file" name="file1" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Description, new { @style = "width:400px;" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <p style="margin-top:20px;">
+            <input type="submit" value="上传" />
+        </p>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("返回", "../Home/Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

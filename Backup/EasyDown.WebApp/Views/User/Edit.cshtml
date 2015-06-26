@@ -1,0 +1,72 @@
+﻿@using EasyDown.Entity
+@model EasyDown.WebApp.Models.ViewModel.UserEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    User user = ViewBag.user as User;
+}
+
+<h2>修改用户信息</h2>
+
+<div class="box-main">
+    @using (Html.BeginForm(Html.BeginForm("Edit", "User", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.HiddenFor(model => model.ID, new { @value = user.ID })
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Username)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Username, new { @Value = user.UserName, @class = " form-control text" })
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password, new { @class = " form-control text" })（不修改留空）
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PasswordNew)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.PasswordNew, new { @class = " form-control text" })
+                @Html.ValidationMessageFor(model => model.PasswordNew)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PasswordNew2)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.PasswordNew2, new { @class = " form-control text" })
+                @Html.ValidationMessageFor(model => model.PasswordNew2)
+            </div>
+
+
+            <div class="editor-label">
+                <label for="file">选择图像</label>
+            </div>
+            <div class="editor-field">
+                <div class="editor-field"><input type="file" name="file" class="form-control text"  /></div>
+            </div>
+
+
+            <p style="margin-top:20px;">
+                <input type="submit" value="修改" />
+            </p>
+        </fieldset>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("返回", "Show")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

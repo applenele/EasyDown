@@ -19,7 +19,7 @@ function LoadResources() {
             var role = $("#userrole").val();
             if (role == "Admin") {
                 for (var i = 0; i < data.length; i++) {
-                    str += "<div class='resource_list_one'><div class='resource_list_left'><img src='/Resource/ShowIcon/" + data[i].ID + "' width='72' height='72'></div><div class='resource_list_right'><span><a href='/Resource/Show/" + data[i].ID + "'>" + data[i].ResourceName + "</a></span> <br/><span><a href='/User/Show/" + data[i].UserID + "'>" + data[i].Username + "</a>@" + data[i].Time + "</span><span style='margin-left:20px;'><a href='/Resource/Download/" + data[i].ID + "'>下载</a></span><span style='margin-left:20px;'><a href='javascript:void(0)' class='deleteR'>删除<input type='hidden' value='" + data[i].ID + "'/></a></span></div></div><div class='clr'></div>";
+                    str += "<div class='resource_list_one'><div class='resource_list_left'><img src='/Resource/ShowIcon/" + data[i].ID + "' width='128' height='128'></div><div class='resource_list_right'><span><a href='/Resource/Show/" + data[i].ID + "'>" + data[i].ResourceName + "</a></span> <br/><span><a href='/User/Show/" + data[i].UserID + "'>" + data[i].Username + "</a>@" + data[i].Time + "</span><span style='margin-left:20px;'><a href='/Resource/Download/" + data[i].ID + "'>下载</a></span><span style='margin-left:20px;'><a href='javascript:void(0)' class='deleteR'>删除<input type='hidden' value='" + data[i].ID + "'/></a></span><br /> <span>" + data[i].Description + "</span><br /><span>分类:"+data[i].Type+"</span></div></div><div class='clr'></div>";
                 }
             }
             else {
@@ -63,6 +63,10 @@ function LoadResources() {
             }
         });
     }
+
+
+  
+
 }
 
 function Load() {
@@ -158,4 +162,23 @@ $(document).ready(function () {
             }
         })
     });
+
+    $("form").submit(function (e) {
+       
+        $.each($(this).find("input[type='file']"), function (i, item) {
+            if ($(item).val() == "") {
+                $(item).addClass('error');
+                e.preventDefault();
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+    });
+
+    $('input').focus(function () {
+        $(this).removeClass('error');
+    });
+
 });

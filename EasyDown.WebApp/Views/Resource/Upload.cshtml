@@ -39,7 +39,7 @@
             @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Description, new { @style = "width:400px;" })
+            @Html.TextBoxFor(model => model.Description, new { @style = "width:400px;",@class="nullable" })
             @Html.ValidationMessageFor(model => model.Description)
         </div>
 

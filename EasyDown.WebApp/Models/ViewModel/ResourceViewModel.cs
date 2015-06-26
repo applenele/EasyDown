@@ -16,6 +16,9 @@ namespace EasyDown.WebApp.Models.ViewModel
         public string Username { get; set; }
 
         public int UserID { get; set; }
+        public string Description { get; set; }
+
+        public string Type { get; set; }
 
         public ResourceViewModel() { }
 
@@ -26,6 +29,8 @@ namespace EasyDown.WebApp.Models.ViewModel
             this.Time = Helper.Time.ToTimeTip(resource.UploadTime).ToString();
             this.Username = resource.User.UserName;
             this.UserID = resource.UserId;
+            this.Description = resource.Description;
+            this.Type = resource.Type.ToString();
         }
     }
 }

@@ -1,0 +1,77 @@
+﻿@using EasyDown.WebApp.Models.ViewModel;
+
+@{
+    ViewBag.Title = "Show";
+    ResourceShowViewModel resource = ViewBag.resource as ResourceShowViewModel;
+}
+
+<h2>资源展示</h2>
+
+<div class="box-main">
+    <input type="hidden" name="name" id="resourceId" value="@resource.ID" />
+    <div>
+        资源名称：@resource.ResourceName
+    </div>
+
+    <div>
+         截图： <br />
+        <img src="/Resource/ShowIcon/@resource.ID" alt="截图" width="400" height="200" />
+    </div>
+
+    <div>
+        资源描述：@resource.Description
+    </div>
+
+    <div>
+        资源类型：@resource.Type
+    </div>
+
+    <div>
+       上传者：<a href="/User/Show/@resource.UserID">@resource.Username</a> 
+    </div>
+    <div>
+        上传时间：@resource.Time
+    </div>
+
+    <div>
+        <a href="/Resource/Download/@resource.ID">下载</a>
+
+        @{
+            if (ViewBag.CurrentUser != null && ViewBag.CurrentUser.Role.ToString() == "Admin")
+            {
+                <span><a href="javascript:void(0)" class="deleteR">删除<input type="hidden" value=@resource.ID /></a></span>
+            }
+        }
+    </div>
+    <div>
+        <table border="1" style="width:583px;">
+            @foreach (var reply in resource.Replies)
+            {
+                <tr>
+                    <td class="reply-left">
+                        <div class="reply-user"><a href="/User/Show/@reply.UserID">@reply.User.UserName</a></div>
+                        <div class="reply-userphoto">
+                            @if (reply.User.Picture == null)
+                            {
+                                <img src="~/Content/Images/userphoto.png" width="50" height="50" />
+                            }
+                            else
+                            {
+                                <img src="/User/ShowPicture/@reply.UserID" width="50" height="50" style="border-radius:10%;" alt="图像" />
+                            }
+                           
+                        </div>
+                    </td>
+                    <td class="reply-right">
+                        @reply.Content  <br />
+                        @reply.Ptime
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div style="margin-top:30px;">
+        <p><textarea cols="80" rows="5" id="reply_content"></textarea></p>
+        <p><input type="button" id="btnSubReply" value="提交评论" /></p>
+    </div>
+</div>

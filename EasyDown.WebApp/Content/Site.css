@@ -180,3 +180,12 @@ h2, h3 {
    float:left;
    margin-left:20px;
 }
+
+.error {
+    border-color: #ff696d;
+    background: #fcfcfc;
+    -webkit-box-shadow: 0 0 10px rgb(255, 128, 128);
+    box-shadow: 0 0 10px rgb(255, 128, 128);
+    behavior:url(/styles/PIE.htc);
+}
+
