@@ -30,30 +30,35 @@
     </div>
     <div class="clr"></div>
     <div class="box-main">
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Word上传</h3>
-                @foreach (var item in ViewBag.Words as List<Resource>)
-                {
-                    <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
-                }
+
+        <div id="resourceLst">
+            <div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Word最新上传</h3>
+                        @foreach (var item in ViewBag.Words as List<Resource>)
+                        {
+                            <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <h3>视屏最新上传</h3>
+                        @foreach (var item in ViewBag.Videos as List<Resource>)
+                        {
+                            <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <h3>音乐最新上传</h3>
+                        @foreach (var item in ViewBag.Musics as List<Resource>)
+                        {
+                            <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3>视屏上传</h3>
-                @foreach (var item in ViewBag.Videos as List<Resource>)
-                {
-                    <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
-                }
-            </div>
-            <div class="col-md-4">
-                <h3>音乐上传</h3>
-                @foreach (var item in ViewBag.Musics as List<Resource>)
-                {
-                    <div><a href="/Resource/Show/@item.ID">@item.ResourceName</a></div>
-                }
-            </div>
+
         </div>
-        <div id="resourceLst"></div>
     </div>
 </div>
 
